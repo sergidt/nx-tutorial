@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-project/feature-customer-management": [
+        "libs/customer-management/feature-customer-management/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
