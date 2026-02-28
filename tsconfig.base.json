@@ -17,6 +17,9 @@
     "paths": {
       "@my-project/feature-customer-management": [
         "libs/customer-management/feature-customer-management/src/index.ts"
+      ],
+      "@my-project/search-bar": [
+        "libs/shared/components/search-bar/src/index.ts"
       ]
     }
   },

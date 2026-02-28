@@ -1,4 +1,8 @@
-<table mat-table [dataSource]="customers" class="mat-elevation-z8">
+<search-bar
+(filterChanged)="applyFilter($event)"
+/>
+
+<table mat-table [dataSource]="filteredCustomers()" class="mat-elevation-z8">
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>

@@ -9,5 +9,4 @@ import { MatToolbar } from '@angular/material/toolbar';
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'frontend';
 }
