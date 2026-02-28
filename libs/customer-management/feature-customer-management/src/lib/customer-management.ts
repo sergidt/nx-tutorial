@@ -1,15 +1,12 @@
-import { ChangeDetectionStrategy, Component, computed, signal, effect } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { SearchBar } from '@my-project/search-bar';
-
-export interface Customer {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  address: string;
-  postalCode: string;
-}
+import { CustomerDTO } from '@my-project/shared-models';
 
 @Component({
   selector: 'lib-customer-management',
@@ -28,7 +25,7 @@ export class CustomerManagement {
     'address',
     'postalCode',
   ];
-  customers: Customer[] = [
+  customers: CustomerDTO[] = [
     {
       id: 1,
       name: 'John Doe',
@@ -137,9 +134,10 @@ export class CustomerManagement {
 
   filteredCustomers = computed(() => {
     const filter = this.filter();
-    return this.customers.filter(customer => customer.name.toLowerCase().includes(filter.toLowerCase()));
-  })
-
+    return this.customers.filter((customer) =>
+      customer.name.toLowerCase().includes(filter.toLowerCase()),
+    );
+  });
 
   applyFilter(filter: string) {
     this.filter.set(filter);

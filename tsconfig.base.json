@@ -20,7 +20,8 @@
       ],
       "@my-project/search-bar": [
         "libs/shared/components/search-bar/src/index.ts"
-      ]
+      ],
+      "@my-project/shared-models": ["libs/shared/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
