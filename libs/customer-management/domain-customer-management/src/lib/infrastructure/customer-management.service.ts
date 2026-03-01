@@ -10,8 +10,12 @@ export class CustomerManagementService {
   httpClient = inject(HttpClient);
 
   filterCustomers(filter: Partial<CustomerDTO> = {}): Observable<CustomerDTO[]> {
-    return this.httpClient.post<CustomerDTO[]>('http://localhost:3000/customers/filter', filter,
-      { responseType: 'json' }
+    return this.httpClient.get<CustomerDTO[]>('http://localhost:3000/api/customers/filter',
+      { params: filter as Record<string, string>, responseType: 'json' }
     );
+  }
+
+  getCustomers(): Observable<CustomerDTO[]> {
+    return this.httpClient.get<CustomerDTO[]>('http://localhost:3000/api/customers', { responseType: 'json' });
   }
 }

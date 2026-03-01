@@ -4,7 +4,7 @@
   "sourceRoot": "libs/customer-management/feature-customer-management/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
+  "tags": ["domain:customer-management", "type:feature"],
   "targets": {
     "test": {
       "executor": "@nx/vitest:test",

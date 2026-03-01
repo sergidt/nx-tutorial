@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/my-nest-app/src",
   "projectType": "application",
-  "tags": [],
+  "tags": ["type:data-access", "scope:backend"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",

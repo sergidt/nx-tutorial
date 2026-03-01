@@ -4,7 +4,7 @@
   "sourceRoot": "libs/customer-management/domain-customer-management/src",
   "prefix": "lib",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:domain","domain:customer-management"],
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint"
