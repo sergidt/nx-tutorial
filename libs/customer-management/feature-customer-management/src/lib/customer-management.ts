@@ -1,22 +1,18 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { SearchBar } from '@my-project/search-bar';
-import { CustomerDTO } from '@my-project/shared-models';
+import {CustomersStore} from "@my-project/domain-customer-management";
 
 @Component({
   selector: 'lib-customer-management',
   imports: [MatTableModule, SearchBar],
   templateUrl: './customer-management.html',
   styleUrl: './customer-management.scss',
+  providers: [CustomersStore],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomerManagement {
-  filter = signal('');
+  protected store = inject(CustomersStore);
 
   displayedColumns: string[] = [
     'name',
@@ -25,17 +21,8 @@ export class CustomerManagement {
     'address',
     'postalCode',
   ];
-  customers: CustomerDTO[] = [
-  ];
-
-  filteredCustomers = computed(() => {
-    const filter = this.filter();
-    return this.customers.filter((customer) =>
-      customer.name.toLowerCase().includes(filter.toLowerCase()),
-    );
-  });
 
   applyFilter(filter: string) {
-    this.filter.set(filter);
+    this.store.filterCustomers({ name: filter });
   }
 }

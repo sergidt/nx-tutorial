@@ -1,1 +1,2 @@
-export * from './lib/domain-customer-management';
+export * from './lib/+state/customers.store';
+export * from './lib/infrastructure/customer-management.service';

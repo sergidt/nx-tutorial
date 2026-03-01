@@ -2,7 +2,7 @@
 (filterChanged)="applyFilter($event)"
 />
 
-<table mat-table [dataSource]="filteredCustomers()" class="mat-elevation-z8">
+<table mat-table [dataSource]="store.entities()" class="mat-elevation-z8">
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
